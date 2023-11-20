@@ -1,0 +1,30 @@
+SRCS = ft_printf.c \
+	   ft_putchar.c
+
+OBJ = $(SRCS:.c=.o)
+NAME = libftprintf.a
+LIBFT_DIR = libft
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(MAKE) -c $(	LIBFT_DIR)
+	@cp $(LIBFT_DIR)/libft.a $@
+	@ar -rcs $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(MAKE) clean -c $ (LIBFT_DIR)
+	rm -rf $(OBJ)
+
+fclean: clean
+	$(MAKE) fclean -c $ (LIBFT_DIR)
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re bonus
