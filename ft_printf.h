@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:47:41 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/20 14:37:58 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/21 10:14:42 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include <unistd.h>
 
 int	ft_putchar(char c);
+int	ft_printf(const char *format_str, ...);
 
 #endif

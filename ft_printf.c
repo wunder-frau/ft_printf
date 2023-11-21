@@ -6,11 +6,13 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:32:03 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/20 14:36:31 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/21 10:15:57 by istasheu         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */#include "ft_printf.h"
+/* ************************************************************************** */
 
-static int	ft_handle_spec(char *input_val, va_list args)
+#include "ft_printf.h"
+
+static int	ft_handle_spec(const char *input_val, va_list args)
 {
 	if (*input_val == 'c')
 		return (ft_putchar(va_arg(args, int)));
@@ -19,7 +21,7 @@ static int	ft_handle_spec(char *input_val, va_list args)
 	return (0);
 }
 
-static int	ft_handle_format(char *format_str, va_list args)
+static int	ft_handle_format(const char *format_str, va_list args)
 {
 	int	len;
 	int	len_temp;
@@ -35,7 +37,6 @@ static int	ft_handle_format(char *format_str, va_list args)
 				return (-1);
 			len += len_temp;
 		}
-		//format_str++;
 	else
 	{
 		if (ft_putchar(*format_str) < 0)
@@ -47,7 +48,7 @@ static int	ft_handle_format(char *format_str, va_list args)
 	return (len);
 }
 
-int	ft_printf(char *format_str, ...)
+int	ft_printf(const char *format_str, ...)
 {
 	va_list	args;
 	int		len;

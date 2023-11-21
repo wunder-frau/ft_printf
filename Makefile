@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(MAKE) -C $(LIBFT_DIR)
 	@cp $(LIBFT_DIR)/libft.a $@
-	@ar -rcs $(NAME) $(OBJ)
+	@ar -ruvcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
