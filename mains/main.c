@@ -3,20 +3,18 @@
 
 void	test_char(char c)
 {
-	int	len_orig;
-	int	len_mine;
+	int	len_printf;
+	int	len_ft_printf;
 
-	len_orig = printf("ORIG: '%c'", c);
-	printf("\n");
-	len_mine = ft_printf("MINE: '%c'", c);
-	printf("\n");
-	if (len_orig != len_mine)
-		printf("LENGTH DOESN'T MATCH! %d != %d\n", len_orig, len_mine);
+	len_printf = printf("-->printf: '%c'\n", c);
+	len_ft_printf = ft_printf("ft_printf: '%c'\n", c);
+	if (len_printf != len_ft_printf)
+		printf("LENGTH DOESN'T MATCH! %d != %d\n", len_printf, len_ft_printf);
 }
 
 void	test_c(void)
 {
-	printf("\n--- C TEST ---\n\n");
+	printf("\n>>> ft_putCHAR <<<\n\n");
 	test_char('%');
 	test_char('\0');
 	test_char(100);
