@@ -6,55 +6,57 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:32:03 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/21 10:15:57 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:07:28 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_handle_spec(const char *input_val, va_list args)
+static int	ft_handle_spec(const char input_val, va_list args)
 {
-	if (*input_val == 'c')
-		return (ft_putchar(va_arg(args, int)));
-	else if (*input_val == '%')
-		return (ft_putchar('%'));
-	return (0);
+	int	i;
+
+	i = 0;
+	if (input_val == 'c')
+		i += (ft_putchar(va_arg(args, int)));
+	else if (input_val == '%')
+		i += (ft_putchar('%'));
+	return (i);
 }
 
-static int	ft_handle_format(const char *format_str, va_list args)
+static int	ft_form(const char *f_s, va_list args)
 {
 	int	len;
 	int	len_temp;
 
 	len = 0;
-	len_temp = 0;
-	while (*format_str)
+	while (*f_s)
 	{
-		if (*format_str == '%' && ft_handle_spec(format_str + 1, args) != 0)
+		if (*f_s == '%')
 		{
-			len_temp = ft_handle_spec(format_str + 1, args);
+			len_temp = ft_handle_spec(*++f_s, args);
 			if (len_temp < 0)
 				return (-1);
 			len += len_temp;
 		}
-	else
-	{
-		if (ft_putchar(*format_str) < 0)
-			return (-1);
-		len++;
+		else
+		{
+			if (ft_putchar(*f_s) < 0)
+				return (-1);
+			len++;
+		}
+		f_s++;
 	}
-	format_str++;
-}
 	return (len);
 }
 
-int	ft_printf(const char *format_str, ...)
+int	ft_printf(const char *f_s, ...)
 {
 	va_list	args;
 	int		len;
 
-	va_start(args, format_str);
-	len = ft_handle_format(format_str, args);
+	va_start(args, f_s);
+	len = ft_form(f_s, args);
 	va_end(args);
 	return (len);
 }
