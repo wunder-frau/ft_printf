@@ -17,6 +17,7 @@ void	test_char(char c)
 void	test_c(void)
 {
 	printf("\n--- C TEST ---\n\n");
+	test_char('%');
 	test_char('\0');
 	test_char(100);
 	test_char(55);
@@ -26,6 +27,12 @@ void	test_c(void)
 	test_char(0);
 	printf(" %c %c %c \n", 'a', 'b', 'c');
 	ft_printf(" %c %c %c \n", 'a', 'b', 'c');
+
+	printf(" %c %c %c \n", 'a', 'b', 'c');
+	
+	ft_printf("MINE: '%k'\n", 'k');
+	
+	printf("ORIG: '%k'\n", 'k');
 }
 
 

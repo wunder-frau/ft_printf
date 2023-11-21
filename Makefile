@@ -28,7 +28,7 @@ fclean: clean
 re: fclean all
 
 test: all
-	$(CC) mains/main.c $(NAME)
+	$(CC) $(CFLAGS) mains/main.c $(NAME)
 
 testclean: fclean
 	rm -rf a.out
