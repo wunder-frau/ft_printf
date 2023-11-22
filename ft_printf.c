@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:32:03 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/21 19:12:49 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:18:05 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int	ft_handle_spec(const char input_val, va_list args)
 		return (ft_putchar(va_arg(args, int)));
 	else if (input_val == '%')
 		return (ft_putchar(input_val));
+	else if (input_val == 's')
+		return (ft_putstr(va_arg(args, char *)));
 	return (-1);
 }
 
