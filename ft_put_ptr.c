@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_ptr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 08:47:41 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/23 16:34:48 by istasheu         ###   ########.fr       */
+/*   Created: 2023/11/23 14:42:48 by istasheu          #+#    #+#             */
+/*   Updated: 2023/11/23 16:34:22 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-
-int	ft_putchar(char c);
-int	ft_putstr(const char *s);
-int	ft_put_hex_low(unsigned int n);
-int	ft_put_hex_up(unsigned int n);
-int	ft_put_ptr(unsigned int);
-int	ft_printf(const char *format_str, ...);
-
-#endif
+int	ft_put_ptr(unsigned int p)
+{
+	int count;
+	
+	count = (write(1, "0x", 2) + ft_put_hex_low(p));
+	if (count == -1)
+		return (-1);
+	return (count);
+}
