@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:32:03 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/22 12:18:05 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:51:02 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,20 @@
 
 static int	ft_handle_spec(const char input_val, va_list args)
 {
+	int	i;
+
+	i = 0;
 	if (input_val == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		i += (ft_putchar(va_arg(args, int)));
 	else if (input_val == '%')
-		return (ft_putchar(input_val));
+		i += (ft_putchar(input_val));
 	else if (input_val == 's')
-		return (ft_putstr(va_arg(args, char *)));
-	return (-1);
+		i += (ft_putstr(va_arg(args, char *)));
+	else if (input_val == 'x')
+		i += (ft_put_hex_low(va_arg(args, int)));
+	else if (input_val == 'X')
+		i += (ft_put_hex_up(va_arg(args, int)));
+	return (i);
 }
 
 static int	ft_form(const char *f_s, va_list args)
