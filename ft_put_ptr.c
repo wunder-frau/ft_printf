@@ -6,17 +6,22 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:42:48 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/23 16:34:22 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/24 14:43:37 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_ptr(unsigned int p)
+int	ft_put_ptr(unsigned long p)
 {
 	int count;
-	
-	count = (write(1, "0x", 2) + ft_put_hex_low(p));
+	int wr_val;
+
+	count = 0;
+	wr_val = write(1, "0x", 2);
+	if (wr_val == -1)
+		return (-1);
+	count = (wr_val + ft_put_hex_low(p));
 	if (count == -1)
 		return (-1);
 	return (count);

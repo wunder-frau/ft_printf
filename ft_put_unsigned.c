@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_unsigned.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 08:47:41 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/24 14:48:55 by istasheu         ###   ########.fr       */
+/*   Created: 2023/11/24 12:40:22 by istasheu          #+#    #+#             */
+/*   Updated: 2023/11/24 14:33:03 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-
-int	ft_putchar(char c);
-int	ft_putstr(const char *s);
-int	ft_put_hex_low(unsigned long n);
-int	ft_put_hex_up(unsigned int n);
-int	ft_put_ptr(unsigned long p);
-int	ft_put_unsigned(unsigned int n);
-int	ft_printf(const char *format_str, ...);
-
-#endif
+int	ft_put_unsigned(unsigned int n)
+{
+    if (n < 10)
+        return (ft_putchar('0' + n));
+    else
+        return (ft_put_unsigned(n / 10) + ft_putchar('0' + n % 10));
+}

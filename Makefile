@@ -3,7 +3,8 @@ SRCS = ft_printf.c \
 	   ft_putstr.c \
 	   ft_put_hex_low.c \
 	   ft_put_hex_up.c \
-	   ft_put_ptr.c
+	   ft_put_ptr.c \
+	   ft_put_unsigned.c
 
 OBJ = $(SRCS:.c=.o)
 NAME = libftprintf.a

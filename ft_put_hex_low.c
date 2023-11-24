@@ -6,13 +6,13 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 10:18:27 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/23 12:20:25 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/24 14:50:20 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_hex_low(unsigned int n)
+int	ft_put_hex_low(unsigned long n)
 {
 	int			count;
 	const char	*base;
@@ -27,8 +27,7 @@ int	ft_put_hex_low(unsigned int n)
 	c = write (1, &base[n % 16], 1);
 	if (c == -1)
 		return (-1);
-	count++;
-	return (count);
+	return (count + 1);
 }
 
 /*int main() {
