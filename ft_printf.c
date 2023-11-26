@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:32:03 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/24 14:52:22 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/26 14:41:34 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ static int	ft_handle_spec(const char input_val, va_list args)
 		i += (ft_put_hex_up(va_arg(args, unsigned int)));
 	else if (input_val == 'p')
 		i += (ft_put_ptr(va_arg(args, unsigned long)));
+	else if (input_val == 'i' || input_val == 'd')
+		i += (ft_put_digit(va_arg(args, int)));
 	else if (input_val == 'u')
-		i += (ft_put_unsigned(va_arg(args, unsigned long)));
+		i += (ft_put_unsigned(va_arg(args, unsigned int)));
 	return (i);
 }
 
