@@ -17,6 +17,7 @@
 # include <unistd.h>
 
 int	ft_putchar(char c);
+int	ft_put_percent(void);
 int	ft_putstr(const char *s);
 int	ft_put_hex_low(unsigned long n);
 int	ft_put_hex_up(unsigned int n);
