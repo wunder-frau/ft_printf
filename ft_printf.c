@@ -20,7 +20,7 @@ static int	ft_handle_spec(const char input_val, va_list args)
 	if (input_val == 'c')
 		i += (ft_putchar(va_arg(args, int)));
 	else if (input_val == '%')
-		i += (ft_putchar(input_val));
+		i += (ft_put_percent());
 	else if (input_val == 's')
 		i += (ft_putstr(va_arg(args, char *)));
 	else if (input_val == 'x')
