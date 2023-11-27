@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:10:09 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/26 14:38:06 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:47:58 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_put_digit(int nb)
 	long		l_nb;
 	int			count;
 	const char	*base;
-	int		check;
+	int			check;
 
 	l_nb = nb;
 	base = "0123456789";
