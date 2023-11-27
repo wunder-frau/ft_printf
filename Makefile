@@ -5,7 +5,8 @@ SRCS = ft_printf.c \
 	   ft_put_hex_up.c \
 	   ft_put_ptr.c \
 	   ft_put_unsigned.c \
-	   ft_put_digit.c 
+	   ft_put_digit.c \
+	   ft_put_percent.c
 
 OBJ = $(SRCS:.c=.o)
 NAME = libftprintf.a
@@ -34,7 +35,7 @@ fclean: clean
 re: fclean all
 
 test: all
-	$(CC) $(CFLAGS) mains/main.c $(NAME)
+	$(CC) mains/main.c $(NAME)
 
 testclean: fclean
 	rm -rf a.out
