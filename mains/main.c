@@ -25,9 +25,8 @@ void	test_c(void)
 //	test_char('0' + 256);
 	test_char(' ');
 	test_char(0);
-	printf(" %c %c %c \n", 'a', 'b', 'c');
-	ft_printf(" %c %c %c \n", 'a', 'b', 'c');
-	printf(" %c %c %c \n", 'a', 'b', 'c');
+//	test_char(" %c %c %c \n", 'a', 'b', 'c');
+//	printf(" %c %c %c \n", 'a', 'b', 'c');
 //	ft_printf("MINE: '%k'\n", 'k');
 //	printf("ORIG: '%k'\n", 'k');
 }
@@ -63,6 +62,7 @@ void	test_s(void)
 	test_str(str);
 	test_str("My name is Iryna! My name is Iryna! My name is Iryna! My name is Iryna! My name is Iryna! My name is Iryna! My name is Iryna!");
 	test_str("-");
+//	test_str("%cs%cs%c", 'c', 'b', 'a');
 }
 
 
@@ -70,4 +70,9 @@ int	main (void)
 {
 	test_c();
 	test_s();
+	ft_printf(" %c %c %c \n", 'a', 'b', 'c');
+	printf("\n");
+	printf(" %c %c %c \n", 'a', 'b', 'c');
+	ft_printf("%cs%cs%c\n", 'c', 'b', 'a');
+	printf("%cs%cs%c", 'c', 'b', 'a');
 }
