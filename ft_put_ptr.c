@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:42:48 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/24 14:43:37 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/27 09:00:52 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_put_ptr(unsigned long p)
 {
-	int count;
-	int wr_val;
+	int	count;
+	int	wr_val;
 
 	count = 0;
 	wr_val = write(1, "0x", 2);
