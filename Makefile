@@ -34,10 +34,4 @@ fclean: clean
 
 re: fclean all
 
-test: all
-	$(CC) mains/main.c $(NAME)
-
-testclean: fclean
-	rm -rf a.out
-
-.PHONY: all clean fclean re test testclean
+.PHONY: all clean fclean re

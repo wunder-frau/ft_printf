@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:47:41 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/25 14:42:08 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:19:23 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+# include "libft/libft.h"
 
 int	ft_putchar(char c);
 int	ft_put_percent(void);

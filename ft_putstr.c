@@ -6,12 +6,11 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:15:04 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/23 11:51:03 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:36:42 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	ft_putstr(const char *s)
 {
