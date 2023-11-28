@@ -29,12 +29,3 @@ int	ft_put_hex_low(unsigned long n)
 		return (-1);
 	return (count + 1);
 }
-
-/*int main() {
-    unsigned long digit = 0;
-    int result = ft_print_hex_low(digit);
-    printf("%d", result);
-    printf("%xu", -1);
-
-    return 0;
-}*/
