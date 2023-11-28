@@ -40,10 +40,3 @@ int	ft_put_digit(int nb)
 		return (count += 1);
 	}
 }
-
-/*int	main(void)
-{
-	int	n = 2147483647;
-	ft_put_digit(n);
-	return (0);
-}*/
