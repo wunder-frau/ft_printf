@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_hex_up.c                                    :+:      :+:    :+:   */
+/*   ft_put_unumber.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 13:39:40 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/23 13:43:06 by istasheu         ###   ########.fr       */
+/*   Created: 2023/11/23 10:18:27 by istasheu          #+#    #+#             */
+/*   Updated: 2023/11/25 15:40:15 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_hex_up(unsigned int n)
+int	ft_put_unumber(unsigned long n, const char *base)
 {
-	int			count;
-	const char	*base;
-	int			c;
+	int		count;
+	int		c;
+	unsigned long	system;
 
-	base = "0123456789ABCDEF";
+	system = ft_strlen(base);
 	count = 0;
-	if (n >= 16)
-		count = ft_put_hex_up(n / 16);
+	if (n >= system)
+		count = ft_put_unumber(n / system, base);
 	if (count == -1)
 		return (-1);
-	c = write (1, &base[n % 16], 1);
+	c = write (1, &base[n % system], 1);
 	if (c == -1)
 		return (-1);
-	count++;
-	return (count);
+	return (count + 1);
 }
+/*
+int main()
+{
+	unsigned long value;
+
+	value = 495;
+	ft_put_unumber(value, FT_BASE16_LOWER);
+
+	return (0);
+}
+*/

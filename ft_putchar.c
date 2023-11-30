@@ -16,7 +16,7 @@ int	ft_putchar(char c)
 {
 	int	check;
 
-	check = write (1, &c, 1);
+	check = write(1, &c, 1);
 	if (check == -1)
 		return (-1);
 	return (1);

@@ -21,7 +21,7 @@ int	ft_put_ptr(unsigned long p)
 	wr_val = write(1, "0x", 2);
 	if (wr_val == -1)
 		return (-1);
-	count = (wr_val + ft_put_hex_low(p));
+	count = (wr_val + ft_put_unumber(p, FT_BASE16_LOWER));
 	if (count == -1)
 		return (-1);
 	return (count);

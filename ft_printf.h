@@ -17,13 +17,15 @@
 # include <unistd.h>
 # include "libft/libft.h"
 
+# define FT_BASE10 "0123456789"
+# define FT_BASE16_UPPER "0123456789ABCDEF"
+# define FT_BASE16_LOWER "0123456789abcdef"
+
 int	ft_putchar(char c);
 int	ft_put_percent(void);
 int	ft_putstr(const char *s);
-int	ft_put_hex_low(unsigned long n);
-int	ft_put_hex_up(unsigned int n);
+int	ft_put_unumber(unsigned long n, const char* base);
 int	ft_put_ptr(unsigned long p);
-int	ft_put_unsigned(unsigned int n);
 int	ft_put_digit(int nb);
 int	ft_printf(const char *format_str, ...);
 

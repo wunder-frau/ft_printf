@@ -1,10 +1,8 @@
 SRCS = ft_printf.c \
 	   ft_putchar.c \
 	   ft_putstr.c \
-	   ft_put_hex_low.c \
-	   ft_put_hex_up.c \
+	   ft_put_unumber.c \
 	   ft_put_ptr.c \
-	   ft_put_unsigned.c \
 	   ft_put_digit.c \
 	   ft_put_percent.c
 

@@ -14,26 +14,24 @@
 
 static int	ft_handle_spec(const char input_val, va_list args)
 {
-	int	i;
-
-	i = 0;
 	if (input_val == 'c')
-		i += (ft_putchar(va_arg(args, int)));
+		return (ft_putchar(va_arg(args, int)));
 	else if (input_val == '%')
-		i += (ft_put_percent());
+		return (ft_put_percent());
 	else if (input_val == 's')
-		i += (ft_putstr(va_arg(args, char *)));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (input_val == 'x')
-		i += (ft_put_hex_low(va_arg(args, unsigned int)));
+		return (ft_put_unumber(va_arg(args, unsigned int), FT_BASE16_LOWER));
 	else if (input_val == 'X')
-		i += (ft_put_hex_up(va_arg(args, unsigned int)));
+		return (ft_put_unumber(va_arg(args, unsigned int), FT_BASE16_UPPER));
 	else if (input_val == 'p')
-		i += (ft_put_ptr(va_arg(args, unsigned long)));
+		return (ft_put_ptr(va_arg(args, unsigned long)));
 	else if (input_val == 'i' || input_val == 'd')
-		i += (ft_put_digit(va_arg(args, int)));
+		return (ft_put_digit(va_arg(args, int)));
 	else if (input_val == 'u')
-		i += (ft_put_unsigned(va_arg(args, unsigned int)));
-	return (i);
+		return (ft_put_unumber(va_arg(args, unsigned int), FT_BASE10));
+
+	return (-1);
 }
 
 static int	ft_form(const char *f_s, va_list args)
