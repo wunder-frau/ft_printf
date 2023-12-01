@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:15:04 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/27 10:36:42 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/12/01 08:32:09 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,20 @@
 
 int	ft_putstr(const char *s)
 {
-	if (s != 0)
-		return (write(1, s, ft_strlen(s)));
-	return (write(1, "(null)", 6));
+	int	check;
+
+	if (s != NULL)
+	{
+		check = write (1, s, ft_strlen(s));
+		if (check == -1)
+			return (-1);
+		return (check);
+	}
+	else
+	{
+		check = write(1, "(null)", 6);
+		if (check == -1)
+			return (-1);
+		return (6);
+	}
 }
