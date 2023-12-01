@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 07:58:57 by istasheu          #+#    #+#             */
-/*   Updated: 2023/12/01 08:47:10 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:05:00 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,5 @@ int	ft_put_unumber(unsigned long n, const char *base)
 	c = write (1, &base[n % system], 1);
 	if (c == -1)
 		return (-1);
-	return (count + 1);
+	return (++count);
 }
-/*
-int main()
-{
-	unsigned long value;
-
-	value = 495;
-	ft_put_unumber(value, FT_BASE16_LOWER);
-
-	return (0);
-}
-*/
