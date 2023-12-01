@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_unumber.c                                        :+:      :+:    :+:   */
+/*   ft_put_unumber.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 10:18:27 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/25 15:40:15 by istasheu         ###   ########.fr       */
+/*   Created: 2023/12/01 07:58:57 by istasheu          #+#    #+#             */
+/*   Updated: 2023/12/01 08:00:09 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_put_unumber(unsigned long n, const char *base)
 {
-	int		count;
-	int		c;
+	int				count;
+	int				c;
 	unsigned long	system;
 
 	system = ft_strlen(base);

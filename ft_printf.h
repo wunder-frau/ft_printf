@@ -6,7 +6,7 @@
 /*   By: istasheu <istasheu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:47:41 by istasheu          #+#    #+#             */
-/*   Updated: 2023/11/27 10:19:23 by istasheu         ###   ########.fr       */
+/*   Updated: 2023/12/01 08:01:47 by istasheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 int	ft_putchar(char c);
 int	ft_put_percent(void);
 int	ft_putstr(const char *s);
-int	ft_put_unumber(unsigned long n, const char* base);
+int	ft_put_unumber(unsigned long n, const char *base);
 int	ft_put_ptr(unsigned long p);
 int	ft_put_digit(int nb);
 int	ft_printf(const char *format_str, ...);
